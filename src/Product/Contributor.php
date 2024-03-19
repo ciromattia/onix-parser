@@ -32,11 +32,25 @@ class Contributor
     protected $NameIdentifier = [];
 
     /**
+     * TitlesBeforeNames
+     *
+     * @var string
+     */
+    protected $TitlesBeforeNames = '';
+
+    /**
      * NamesBeforeKey
      *
      * @var string
      */
     protected $NamesBeforeKey;
+
+    /**
+     * CorporateName
+     *
+     * @var string
+     */
+    protected $CorporateName;
 
     /**
      * BiographicalNote
@@ -51,6 +65,20 @@ class Contributor
      * @var string
      */
     protected $KeyNames;
+
+    /**
+     * SuffixToKey
+     *
+     * @var string
+     */
+    protected $SuffixToKey = '';
+
+    /**
+     * LettersAfterNames
+     *
+     * @var string
+     */
+    protected $LettersAfterNames = '';
 
     /**
      * Set SequenceNumber
@@ -97,6 +125,17 @@ class Contributor
     }
 
     /**
+     * Set TitlesBeforeNames
+     *
+     * @param string $TitlesBeforeNames
+     * @return void
+     */
+    public function setTitlesBeforeNames(string $TitlesBeforeNames)
+    {
+        $this->TitlesBeforeNames = $TitlesBeforeNames;
+    }
+
+    /**
      * Set NamesBeforeKey
      *
      * @param string $NamesBeforeKey
@@ -116,6 +155,28 @@ class Contributor
     public function setKeyNames(string $KeyNames)
     {
         $this->KeyNames = $KeyNames;
+    }
+
+    /**
+     * Set SuffixToKey
+     *
+     * @param string $SuffixToKey
+     * @return void
+     */
+    public function setSuffixToKey(string $SuffixToKey)
+    {
+        $this->SuffixToKey = $SuffixToKey;
+    }
+
+    /**
+     * Set LettersAfterNames
+     *
+     * @param string $LettersAfterNames
+     * @return void
+     */
+    public function setLettersAfterNames(string $LettersAfterNames)
+    {
+        $this->LettersAfterNames = $LettersAfterNames;
     }
 
     /**
@@ -170,9 +231,19 @@ class Contributor
     }
 
     /**
+     * Get TitlesBeforeNames
+     *
+     * @return string
+     */
+    public function getTitlesBeforeNames()
+    {
+        return $this->TitlesBeforeNames;
+    }
+
+    /**
      * Get NamesBeforeKey
      *
-     * @return void
+     * @return string
      */
     public function getNamesBeforeKey()
     {
@@ -187,6 +258,26 @@ class Contributor
     public function getKeyNames()
     {
         return $this->KeyNames;
+    }
+
+    /**
+     * Get SuffixToKey
+     *
+     * @return string
+     */
+    public function getSuffixToKey()
+    {
+        return $this->SuffixToKey;
+    }
+
+    /**
+     * Get LettersAfterNames
+     *
+     * @return string
+     */
+    public function getLettersAfterNames()
+    {
+        return $this->LettersAfterNames;
     }
 
     /**
@@ -220,6 +311,37 @@ class Contributor
     }
 
     /**
+     * Get CorporateName
+     *
+     * @return string
+     */
+    public function getCorporateName()
+    {
+        return $this->CorporateName;
+    }
+
+    /**
+     * Set CorporateName
+     *
+     * @param string $CorporateName
+     * @return void
+     */
+    public function setCorporateName(string $CorporateName)
+    {
+        $this->CorporateName = $CorporateName;
+    }
+
+    /**
+     * Determine if the contributor is a corporate contributor
+     *
+     * @return boolean
+     */
+    public function isCorporateContributor(): bool
+    {
+        return !empty($this->CorporateName);
+    }
+
+    /**
      * Determine if the contributor is an author
      *
      * @return boolean
@@ -228,5 +350,4 @@ class Contributor
     {
         return $this->ContributorRole->getCode() === self::CODE_AUTHOR;
     }
-
 }

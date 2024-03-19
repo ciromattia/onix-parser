@@ -33,6 +33,13 @@ class Price
     protected $PriceAmount;
 
     /**
+     * PriceDate
+     *
+     * @var PriceDate
+     */
+    protected $PriceDate = [];
+
+    /**
      * CurrencyCode
      *
      * @var CodeList
@@ -112,6 +119,16 @@ class Price
     public function setPriceAmount(string $PriceAmount)
     {
         $this->PriceAmount = (float) $PriceAmount;
+    }
+
+    public function getPriceDate(): array
+    {
+        return $this->PriceDate;
+    }
+
+    public function setPriceDate(PriceDate $PriceDate): void
+    {
+        $this->PriceDate[] = $PriceDate;
     }
 
     /**
@@ -210,7 +227,7 @@ class Price
     {
         return $this->PriceStatus;
     }
-    
+
     /**
      * PriceAmount
      *

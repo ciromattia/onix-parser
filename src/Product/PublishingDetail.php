@@ -252,5 +252,4 @@ class PublishingDetail
     public function removeSalesRight(SalesRights $SalesRights)
     {
     }
-
 }

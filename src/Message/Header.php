@@ -2,6 +2,7 @@
 
 namespace Ribal\Onix\Message;
 
+use Ribal\Onix\CodeList\CodeList96;
 use Ribal\Onix\Date;
 
 class Header
@@ -34,6 +35,13 @@ class Header
      * @var string
      */
     protected $MessageNumber;
+
+    /**
+     * Default Currency Code
+     *
+     * @var CodeList96
+     */
+    protected $CurrencyCode;
 
     /**
      * Set Sender
@@ -80,6 +88,17 @@ class Header
     }
 
     /**
+     * Set DefaultCurrencyCode
+     *
+     * @param CodeList96 $currencyCode
+     * @return void
+     */
+    public function setDefaultCurrencyCode(CodeList96 $currencyCode)
+    {
+        $this->CurrencyCode = $currencyCode;
+    }
+
+    /**
      * Get Sender
      *
      * @return Sender
@@ -119,4 +138,13 @@ class Header
         return $this->MessageNumber;
     }
 
+    /**
+     * Get DefaultCurrencyCode
+     *
+     * @return CodeList96
+     */
+    public function getDefaultCurrencyCode()
+    {
+        return $this->CurrencyCode;
+    }
 }

@@ -27,6 +27,13 @@ class CollateralDetail
     protected $SupportingResource = [];
 
     /**
+     * Array of Prize
+     *
+     * @var array|Prize
+     */
+    protected $Prize = [];
+
+    /**
      * Add a new TextContent
      *
      * @param TextContent $TextContent
@@ -60,6 +67,17 @@ class CollateralDetail
     }
 
     /**
+     * Add new Prize
+     *
+     * @param Prize $Prize
+     * @return void
+     */
+    public function addPrize(Prize $Prize)
+    {
+    	$this->Prize[] = $Prize;
+    }
+
+    /**
      * Get TextContents
      *
      * @return array
@@ -68,7 +86,7 @@ class CollateralDetail
     {
         return $this->TextContent;
     }
-    
+
     /**
      * Get TextContents
      *
@@ -98,7 +116,7 @@ class CollateralDetail
     {
         return $this->SupportingResource;
     }
-    
+
     /**
      * Get all SupportingResources
      *
@@ -107,6 +125,26 @@ class CollateralDetail
     public function getSupportingResources()
     {
     	return $this->SupportingResource;
+    }
+
+    /**
+     * Get Prize
+     *
+     * @return array
+     */
+    public function getPrize()
+    {
+    	return $this->Prize;
+    }
+
+    /**
+     * Get all Prizes
+     *
+     * @return Prize[]
+     */
+    public function getPrizes()
+    {
+    	return $this->Prize;
     }
 
     /**
@@ -138,7 +176,17 @@ class CollateralDetail
     public function removeSupportingResource(SupportingResource $SupportingResource)
     {
     }
-    
+
+    /**
+     * Remove a Prize
+     *
+     * @param Prize $Prize
+     * @return void
+     */
+    public function removePrize(Prize $Prize)
+    {
+    }
+
     /**
      * Get the product description text, if set
      *
@@ -152,7 +200,7 @@ class CollateralDetail
     		}
     	}
     }
-    
+
     /**
      * Get the front cover resource, if set
      *
@@ -166,14 +214,14 @@ class CollateralDetail
 			}
 		}
 	}
-	
+
 	/**
 	 * Get all image resources
 	 *
 	 * @return SupportingResource[]|array
 	 */
 	public function getImageResources()
-	{	
+	{
 		return array_filter($this->SupportingResource, function($resource) {
 			return $resource->isImage();
 		});
