@@ -511,7 +511,7 @@ class DescriptiveDetail
     /**
      * Get EditionType
      *
-     * @return string
+     * @return array
      */
     public function getEditionType()
     {
