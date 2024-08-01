@@ -133,7 +133,7 @@ class DescriptiveDetail
     /**
      * EditionType
      *
-     * @var string
+     * @var array
      */
     protected $EditionType = '';
 
@@ -303,10 +303,10 @@ class DescriptiveDetail
     /**
      * Set EditionType
      *
-     * @param string $EditionType
+     * @param array $EditionType
      * @return void
      */
-    public function setEditionType(string $EditionType)
+    public function setEditionType(array $EditionType)
     {
         $this->EditionType = $EditionType;
     }
