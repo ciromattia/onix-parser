@@ -29,7 +29,7 @@ class TextNormalizer implements NormalizerInterface, DenormalizerInterface
         $content = is_array($data) ? $data['#'] : $data;
 
         if ($content == null) {
-            dump($data);
+            var_dump($data);
         }
 
         return new Text($content, $textFormat, $language);
