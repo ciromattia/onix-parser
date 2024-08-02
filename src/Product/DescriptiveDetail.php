@@ -303,7 +303,7 @@ class DescriptiveDetail
     /**
      * Set EditionType
      *
-     * @param string|array $EditionType
+     * @param string|string[] $EditionType
      * @return void
      */
     public function setEditionType(string|array $EditionType)
