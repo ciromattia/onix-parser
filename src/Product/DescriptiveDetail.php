@@ -303,12 +303,12 @@ class DescriptiveDetail
     /**
      * Set EditionType
      *
-     * @param array $EditionType
+     * @param string|array $EditionType
      * @return void
      */
-    public function setEditionType(array $EditionType)
+    public function setEditionType(string|array $EditionType)
     {
-        $this->EditionType = $EditionType;
+        $this->EditionType = (array) $EditionType;
     }
 
     /**
