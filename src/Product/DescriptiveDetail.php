@@ -133,7 +133,7 @@ class DescriptiveDetail
     /**
      * EditionType
      *
-     * @var array
+     * @var string|string[]
      */
     protected $EditionType = '';
 
@@ -308,7 +308,7 @@ class DescriptiveDetail
      */
     public function setEditionType(string|array $EditionType)
     {
-        $this->EditionType = (array) $EditionType;
+        $this->EditionType = $EditionType;
     }
 
     /**
@@ -511,7 +511,7 @@ class DescriptiveDetail
     /**
      * Get EditionType
      *
-     * @return array
+     * @return string|string[]
      */
     public function getEditionType()
     {
