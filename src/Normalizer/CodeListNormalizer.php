@@ -46,9 +46,9 @@ class CodeListNormalizer implements NormalizerInterface, DenormalizerInterface
      * @param CodeList $data
      * @param string $format
      * @param array $context
-     * @return void
+     * @return array|string|int|float|bool|\ArrayObject|null \ArrayObject is used to make sure an empty object is encoded as an object not an array
      */
-    public function normalize($data, $format = null, array $context = [])
+    public function normalize($data, $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
     {
         return $data->getCode();
     }
