@@ -35,7 +35,7 @@ class CodeListNormalizer implements NormalizerInterface, DenormalizerInterface
      * @param array $context
      * @return boolean
      */
-    public function supportsNormalization($data, $format = null, array $context = []): bool
+    public function supportsNormalization($data, $format = null, array $context = [])
     {
         return $data instanceof CodeList;
     }
@@ -46,9 +46,9 @@ class CodeListNormalizer implements NormalizerInterface, DenormalizerInterface
      * @param CodeList $data
      * @param string $format
      * @param array $context
-     * @return array|string|int|float|bool|\ArrayObject|null \ArrayObject is used to make sure an empty object is encoded as an object not an array
+     * @return void
      */
-    public function normalize($data, $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
+    public function normalize($data, $format = null, array $context = [])
     {
         return $data->getCode();
     }
@@ -62,7 +62,7 @@ class CodeListNormalizer implements NormalizerInterface, DenormalizerInterface
      * @param array $context
      * @return boolean
      */
-    public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
+    public function supportsDenormalization($data, $type, $format = null, array $context = [])
     {
         return is_subclass_of($type, CodeList::class);
     }
@@ -77,7 +77,7 @@ class CodeListNormalizer implements NormalizerInterface, DenormalizerInterface
      * @param array $context
      * @return CodeListList
      */
-    public function denormalize($data, $type, $format = null, array $context = []): mixed
+    public function denormalize($data, $type, $format = null, array $context = [])
     {
         return $type::resolve($data, $this->language);
     }
