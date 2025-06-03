@@ -5,13 +5,6 @@ namespace Ribal\Onix\Product;
 use Ribal\Onix\CodeList\CodeList220;
 use Ribal\Onix\CodeList\CodeList79;
 use Ribal\Onix\CodeList\CodeList98;
-use Ribal\Onix\CodeList\CodeList143;
-use Ribal\Onix\CodeList\CodeList242;
-use Ribal\Onix\CodeList\CodeList184;
-use Ribal\Onix\CodeList\CodeList176;
-use Ribal\Onix\CodeList\CodeList196;
-use Ribal\Onix\CodeList\CodeList76;
-use Ribal\Onix\CodeList\CodeList99;
 
 class ProductFormFeature
 {
