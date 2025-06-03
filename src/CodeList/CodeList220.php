@@ -9,7 +9,7 @@ namespace Ribal\Onix\CodeList;
  *
  * @see https://ns.editeur.org/onix/en/220
  */
-class CodeList220 extends CodeList
+class CodeList220 extends CodeList  implements CodeListInterface
 {
     protected static $en = [
         // Certification values
