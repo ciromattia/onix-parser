@@ -131,6 +131,13 @@ class DescriptiveDetail
     protected $Audience = [];
 
     /**
+     * EditionType
+     *
+     * @var string|string[]
+     */
+    protected $EditionType = '';
+
+    /**
      * Set ProductComposition
      *
      * @param string $ProductComposition
@@ -215,7 +222,7 @@ class DescriptiveDetail
      */
     public function removeMeasure(Measure $Measure)
     {
-        
+
     }
 
     /**
@@ -294,6 +301,17 @@ class DescriptiveDetail
     }
 
     /**
+     * Set EditionType
+     *
+     * @param string|string[] $EditionType
+     * @return void
+     */
+    public function setEditionType(string|array $EditionType)
+    {
+        $this->EditionType = $EditionType;
+    }
+
+    /**
      * Add new Extent
      *
      * @param Extent $Extent
@@ -336,7 +354,7 @@ class DescriptiveDetail
     {
         $this->Collection[] = $Collection;
     }
-    
+
     /**
      * Remove Collection
      *
@@ -399,7 +417,7 @@ class DescriptiveDetail
     {
         return $this->ProductFormDetail;
     }
-    
+
     /**
      * Remove ProductFormDetail
      *
@@ -429,7 +447,7 @@ class DescriptiveDetail
     {
         return $this->Measure;
     }
-    
+
     /**
      * Get all Measures
      *
@@ -453,7 +471,7 @@ class DescriptiveDetail
     /**
      * Get all Contributors
      *
-     * @return void
+     * @return Contributor[]
      */
     public function getContributor()
     {
@@ -491,6 +509,16 @@ class DescriptiveDetail
     }
 
     /**
+     * Get EditionType
+     *
+     * @return string|string[]
+     */
+    public function getEditionType()
+    {
+        return $this->EditionType;
+    }
+
+    /**
      * Get Extent
      *
      * @return array
@@ -519,7 +547,7 @@ class DescriptiveDetail
     {
         return $this->Subject;
     }
-    
+
     /**
      * Get all Subjects
      *
@@ -623,7 +651,7 @@ class DescriptiveDetail
     public function removeProductFormFeature(ProductFormFeature $ProductFormFeature)
     {
     }
-    
+
     /**
      * Get the height measure of the product, if set
      *
@@ -635,9 +663,9 @@ class DescriptiveDetail
     		if ($measure->isHeight()) {
     			return $measure;
     		}
-    	}    
+    	}
     }
-    
+
     /**
      * Get the width measure of the product, if set
      *
@@ -649,9 +677,9 @@ class DescriptiveDetail
     		if ($measure->isWidth()) {
     			return $measure;
     		}
-    	}    
+    	}
     }
-    
+
     /**
      * Get the thickness measure of the product, if set
      *
@@ -663,9 +691,9 @@ class DescriptiveDetail
     		if ($measure->isThickness()) {
     			return $measure;
     		}
-    	}    
+    	}
     }
-    
+
     /**
      * Get the weight measure of the product, if set
      *
@@ -677,9 +705,9 @@ class DescriptiveDetail
     		if ($measure->isWeight()) {
     			return $measure;
     		}
-    	}    
+    	}
     }
-    
+
     /**
      * Get all contributors marked as authors
      *
@@ -691,5 +719,4 @@ class DescriptiveDetail
     		return $contributor->isAuthor();
     	});
     }
-
 }
