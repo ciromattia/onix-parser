@@ -80,12 +80,12 @@ class Contributor
      */
     protected $LettersAfterNames = '';
 
-	/**
-	 * ContributorDescription (b048)
-	 *
-	 * @var string
-	 */
-	protected $ContributorDescription = '';
+    /**
+     * ContributorDescription (b048)
+     *
+     * @var string
+     */
+    protected $ContributorDescription = '';
 
     /**
      * Set SequenceNumber
@@ -338,15 +338,15 @@ class Contributor
         return $this->CorporateName;
     }
 
-	/**
-	 * Get ContributorDescription
-	 *
-	 * @return string
-	 */
-	public function getContributorDescription()
-	{
-		return $this->ContributorDescription;
-	}
+    /**
+     * Get ContributorDescription
+     *
+     * @return string
+     */
+    public function getContributorDescription()
+    {
+      return $this->ContributorDescription;
+    }
 
     /**
      * Set CorporateName

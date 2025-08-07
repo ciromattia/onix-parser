@@ -5,7 +5,13 @@ namespace Ribal\Onix\Product;
 use Ribal\Onix\CodeList\CodeList220;
 use Ribal\Onix\CodeList\CodeList79;
 use Ribal\Onix\CodeList\CodeList98;
-use Ribal\Onix\CodeList\CodeList220;
+use Ribal\Onix\CodeList\CodeList143;
+use Ribal\Onix\CodeList\CodeList242;
+use Ribal\Onix\CodeList\CodeList184;
+use Ribal\Onix\CodeList\CodeList176;
+use Ribal\Onix\CodeList\CodeList196;
+use Ribal\Onix\CodeList\CodeList76;
+use Ribal\Onix\CodeList\CodeList99;
 
 class ProductFormFeature
 {
@@ -45,10 +51,10 @@ class ProductFormFeature
     /**
      * Set ProductFormFeatureValue
      *
-     * @param CodeList220 | CodeList98 $ProductFormFeatureValue
+     * @param CodeList220 | CodeList98 | CodeList143 | CodeList176 | CodeList184 | CodeList196 | CodeList76 | CodeList99 | CodeList242 $ProductFormFeatureValue
      * @return void
      */
-    public function setProductFormFeatureValue(CodeList220 | CodeList98 $ProductFormFeatureValue)
+    public function setProductFormFeatureValue(CodeList220 | CodeList98 | CodeList143 | CodeList176 | CodeList184 | CodeList196 | CodeList76 | CodeList99 | CodeList242 $ProductFormFeatureValue)
     {
         $this->ProductFormFeatureValue = $ProductFormFeatureValue;
     }

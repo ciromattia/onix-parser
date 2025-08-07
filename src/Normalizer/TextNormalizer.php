@@ -13,7 +13,7 @@ class TextNormalizer implements NormalizerInterface, DenormalizerInterface
     /**
      * {@inheritDoc}
      */
-    public function normalize($object, $format = null, array $context = [])
+    public function normalize($object, $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
     {
 
     }
@@ -21,7 +21,7 @@ class TextNormalizer implements NormalizerInterface, DenormalizerInterface
     /**
      * {@inheritDoc}
      */
-    public function denormalize($data, $type, $format = null, array $context = [])
+    public function denormalize($data, $type, $format = null, array $context = []): mixed
     {
 
         $textFormat = isset($data['@textformat']) ? $data['@textformat'] : Text::TYPE_DEFAULT;
@@ -29,7 +29,7 @@ class TextNormalizer implements NormalizerInterface, DenormalizerInterface
         $content = is_array($data) ? $data['#'] : $data;
 
         if ($content == null) {
-            dump($data);
+            var_dump($data);
         }
 
         return new Text($content, $textFormat, $language);
@@ -39,7 +39,7 @@ class TextNormalizer implements NormalizerInterface, DenormalizerInterface
     /**
      * {@inheritDoc}
      */
-    public function supportsNormalization($data, $format = null)
+    public function supportsNormalization($data, $format = null, array $context = []): bool
     {
 
     }
@@ -47,9 +47,19 @@ class TextNormalizer implements NormalizerInterface, DenormalizerInterface
     /**
      * {@inheritDoc}
      */
-    public function supportsDenormalization($data, $type, $format = null)
+    public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
         return $type == Text::class;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getSupportedTypes(?string $format): array
+    {
+        return [
+            Text::class => true,
+        ];
     }
 
 }
