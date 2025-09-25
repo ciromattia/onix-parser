@@ -2,6 +2,7 @@
 
 namespace Ribal\Onix\Product;
 
+use Ribal\Onix\CodeList\CodeList;
 use Ribal\Onix\CodeList\CodeList1;
 use Ribal\Onix\CodeList\CodeList3;
 
@@ -44,11 +45,11 @@ class Product
     protected $RecordSourceName;
 
     /**
-     * ProductItentifiers
+     * ProductIdentifier
      *
-     * @var array|ProductItentifier
+     * @var array|ProductIdentifier
      */
-    protected $ProductItentifier = [];
+    protected $ProductIdentifier = [];
 
     /**
      * DescriptiveDetail
@@ -99,7 +100,7 @@ class Product
     /**
      * Set the type of notification
      *
-     * @param Code $NotificationType
+     * @param CodeList $NotificationType
      * @return void
      */
     public function setNotificationType(CodeList1 $NotificationType)
@@ -110,7 +111,7 @@ class Product
     /**
      * Set RecordSourceType
      *
-     * @param string $RecordSourceType
+     * @param CodeList $RecordSourceType
      * @return void
      */
     public function setRecordSourceType(CodeList3 $RecordSourceType)
@@ -148,7 +149,7 @@ class Product
      */
     public function addProductIdentifier(ProductIdentifier $productIdentifier)
     {
-        $this->ProductItentifier[] = $productIdentifier;
+        $this->ProductIdentifier[] = $productIdentifier;
     }
 
     /**
@@ -159,7 +160,7 @@ class Product
      */
     public function removeProductIdentifier(ProductIdentifier $productIdentifier)
     {
-        $this->ProductItentifier[] = $productIdentifier;
+        $this->ProductIdentifier[] = $productIdentifier;
     }
 
     /**
@@ -241,7 +242,7 @@ class Product
     /**
      * Get the Notification Type
      *
-     * @return \Ribal\Onix\Code
+     * @return CodeList
      */
     public function getNotificationType()
     {
@@ -275,7 +276,7 @@ class Product
      */
     public function getProductIdentifier()
     {
-        return $this->ProductItentifier;
+        return $this->ProductIdentifier;
     }
 
     /**
