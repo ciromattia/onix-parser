@@ -2,6 +2,7 @@
 
 namespace Ribal\Onix\Product;
 
+use Ribal\Onix\CodeList\CodeList;
 use Ribal\Onix\CodeList\CodeList142;
 use Ribal\Onix\CodeList\CodeList174;
 use Ribal\Onix\CodeList\CodeList58;
