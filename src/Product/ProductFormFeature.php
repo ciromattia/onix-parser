@@ -13,9 +13,12 @@ use Ribal\Onix\CodeList\CodeList196;
 use Ribal\Onix\CodeList\CodeList76;
 use Ribal\Onix\CodeList\CodeList99;
 
+
+use Ribal\Onix\CodeList\CodeListPFF;
+use Symfony\Component\Serializer\Attribute\DiscriminatorMap;
+
 class ProductFormFeature
 {
-
     /**
      * ProductFormFeatureType
      *
@@ -51,10 +54,10 @@ class ProductFormFeature
     /**
      * Set ProductFormFeatureValue
      *
-     * @param CodeList220 | CodeList98 | CodeList143 | CodeList176 | CodeList184 | CodeList196 | CodeList76 | CodeList99 | CodeList242 $ProductFormFeatureValue
+     * @param CodeListPFF $ProductFormFeatureValue
      * @return void
      */
-    public function setProductFormFeatureValue(CodeList220 | CodeList98 | CodeList143 | CodeList176 | CodeList184 | CodeList196 | CodeList76 | CodeList99 | CodeList242 $ProductFormFeatureValue)
+    public function setProductFormFeatureValue(CodeListPFF $ProductFormFeatureValue)
     {
         $this->ProductFormFeatureValue = $ProductFormFeatureValue;
     }
