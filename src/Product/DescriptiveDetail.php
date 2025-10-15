@@ -2,6 +2,7 @@
 
 namespace Ribal\Onix\Product;
 
+use Ribal\Onix\CodeList\CodeList;
 use Ribal\Onix\CodeList\CodeList2;
 use Ribal\Onix\CodeList\CodeList81;
 use Ribal\Onix\CodeList\CodeList91;
@@ -21,9 +22,15 @@ class DescriptiveDetail
     /**
      * ProductForm
      *
-     * @var CodeListList
+     * @var CodeList150
      */
     protected $ProductForm;
+
+    /**
+     * ProductPart
+     * @var ProductPart[]
+     */
+    protected $ProductPart = [];
 
     /**
      * ProductFormDetail
@@ -157,6 +164,17 @@ class DescriptiveDetail
     public function setProductForm(CodeList150 $ProductForm)
     {
         $this->ProductForm = $ProductForm;
+    }
+
+    /**
+     * Set Product Part
+     *
+     * @param ProductPart $ProductPart
+     * @return void
+     */
+    public function setProductPart(ProductPart $ProductPart)
+    {
+        $this->ProductPart = $ProductPart;
     }
 
     /**
@@ -406,6 +424,16 @@ class DescriptiveDetail
     public function getProductForm()
     {
         return $this->ProductForm;
+    }
+
+    /**
+     * Get Product Part
+     *
+     * @return ProductPart[]
+     */
+    public function getProductPart()
+    {
+        return $this->ProductPart;
     }
 
     /**
