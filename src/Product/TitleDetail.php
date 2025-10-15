@@ -15,6 +15,12 @@ class TitleDetail
     protected $TitleType;
 
     /**
+     * TitleStatement
+     *
+     * @var string
+     */
+    protected $TitleStatement;
+    /**
      * Array of TitleElement
      *
      * @var TitleElement[]
@@ -30,6 +36,17 @@ class TitleDetail
     public function setTitleType(CodeList15 $TitleType)
     {
         $this->TitleType = $TitleType;
+    }
+
+    /**
+     * Set TitleStatement
+     *
+     * @param string $TitleStatement
+     * @return void
+     */
+    public function setTitleStatement(string $TitleStatement)
+    {
+        $this->TitleStatement = $TitleStatement;
     }
 
     /**
@@ -61,6 +78,16 @@ class TitleDetail
     public function getTitleType()
     {
         return $this->TitleType;
+    }
+
+    /**
+     * Get TitleStatement
+     *
+     * @return string
+     */
+    public function getTitleStatement()
+    {
+        return $this->TitleStatement;
     }
 
     /**
