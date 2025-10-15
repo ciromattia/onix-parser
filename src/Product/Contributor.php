@@ -2,7 +2,9 @@
 
 namespace Ribal\Onix\Product;
 
+use Ribal\Onix\CodeList\CodeList;
 use Ribal\Onix\CodeList\CodeList17;
+use Ribal\Onix\CodeList\CodeList18;
 use Ribal\Onix\Text;
 
 class Contributor
@@ -25,11 +27,32 @@ class Contributor
     protected $ContributorRole;
 
     /**
+     * NameType
+     *
+     * @var CodeList18
+     */
+    protected $NameType;
+
+    /**
      * Array of NameIdentifiers
      *
      * @var array|NameIdentifier
      */
     protected $NameIdentifier = [];
+
+    /**
+     * PersonName
+     *
+     * @var string
+     */
+    protected $PersonName;
+
+    /**
+     * PersonNameInverted
+     *
+     * @var string
+     */
+    protected $PersonNameInverted;
 
     /**
      * TitlesBeforeNames
@@ -107,6 +130,39 @@ class Contributor
     public function setContributorRole(CodeList17 $ContributorRole)
     {
         $this->ContributorRole = $ContributorRole;
+    }
+
+    /**
+     * Set NameType
+     *
+     * @param CodeList18 $NameType
+     * @return void
+     */
+    public function setNameType(CodeList18 $NameType)
+    {
+        $this->NameType = $NameType;
+    }
+
+    /**
+     * Set PersonName
+     *
+     * @param string $PersonName
+     * @return void
+     */
+    public function setPersonName(string $PersonName)
+    {
+        $this->PersonName = $PersonName;
+    }
+
+    /**
+     * Set PersonNameInverted
+     *
+     * @param string $PersonNameInverted
+     * @return void
+     */
+    public function setPersonNameInverted(string $PersonNameInverted)
+    {
+        $this->PersonNameInverted = $PersonNameInverted;
     }
 
     /**
@@ -226,6 +282,36 @@ class Contributor
     public function getContributorRole()
     {
         return $this->ContributorRole;
+    }
+
+    /**
+     * Get NameType
+     *
+     * @return CodeList18
+     */
+    public function getNameType()
+    {
+        return $this->NameType;
+    }
+
+    /**
+     * Get PersonName
+     *
+     * @return string
+     */
+    public function getPersonName()
+    {
+        return $this->PersonName;
+    }
+
+    /**
+     * Get PersonNameInverted
+     *
+     * @return string
+     */
+    public function getPersonNameInverted()
+    {
+        return $this->PersonNameInverted;
     }
 
     /**
